@@ -16,5 +16,21 @@ namespace R1_201801757_김정훈
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // 폼이 정 중앙에 등장했으면 좋겠다.
+        }
+
+        private void tbID_Click(object sender, EventArgs e)
+        {
+            tbID.Text = "";
+        }
+
+        private void tbID_Leave(object sender, EventArgs e)
+        {
+            if (tbID.Text == "")
+                tbID.Text = "아이디";
+        }
     }
 }
