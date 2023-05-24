@@ -32,10 +32,11 @@
             this.tbPW = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblFindID = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbRemember = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblFindPW = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,22 +75,23 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(78, 207);
+            this.label1.Location = new System.Drawing.Point(45, 207);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 15);
             this.label1.TabIndex = 5;
             this.label1.Text = "회원가입";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // lblFindID
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label2.Location = new System.Drawing.Point(172, 207);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 15);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "ID/PW 찾기";
+            this.lblFindID.AutoSize = true;
+            this.lblFindID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblFindID.Location = new System.Drawing.Point(139, 207);
+            this.lblFindID.Name = "lblFindID";
+            this.lblFindID.Size = new System.Drawing.Size(50, 15);
+            this.lblFindID.TabIndex = 6;
+            this.lblFindID.Text = "ID찾기";
+            this.lblFindID.Click += new System.EventHandler(this.lblFindID_Click);
             // 
             // pictureBox1
             // 
@@ -121,14 +123,26 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "LOGIN";
             // 
+            // lblFindPW
+            // 
+            this.lblFindPW.AutoSize = true;
+            this.lblFindPW.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblFindPW.Location = new System.Drawing.Point(212, 207);
+            this.lblFindPW.Name = "lblFindPW";
+            this.lblFindPW.Size = new System.Drawing.Size(61, 15);
+            this.lblFindPW.TabIndex = 10;
+            this.lblFindPW.Text = "PW찾기";
+            this.lblFindPW.Click += new System.EventHandler(this.lblFindPW_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(341, 274);
+            this.Controls.Add(this.lblFindPW);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbRemember);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblFindID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.tbPW);
@@ -149,10 +163,11 @@
         private System.Windows.Forms.TextBox tbPW;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblFindID;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.CheckBox cbRemember;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblFindPW;
     }
 }
 
