@@ -75,7 +75,11 @@ namespace R1_201801757_김정훈
                         sw.WriteLine("여자");
                 }
             }
-            catch { return; }
+            catch {
+                MessageBox.Show("오류 : 가입에 실패하였습니다.");
+                return; }
+            MessageBox.Show("가입에 성공하였습니다.");
+
         }
 
         private void btnCheck_Click(object sender, EventArgs e)

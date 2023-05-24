@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace R1_201801757_김정훈
 {
@@ -19,7 +20,15 @@ namespace R1_201801757_김정훈
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // 폼이 정 중앙에 등장했으면 좋겠다.
+            string path = @"D:\HoonGit\Winform\R1_201801757_김정훈\R1_201801757_김정훈\idList\remember.txt";
+            if (File.Exists(path))
+            {
+                StreamReader sr = new StreamReader(path);
+                string ID = sr.ReadLine();
+                tbID.Text = ID;
+                cbRemember.Checked = true;
+                sr.Close();
+            }
         }
 
         private void tbID_Click(object sender, EventArgs e)
@@ -36,11 +45,25 @@ namespace R1_201801757_김정훈
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //로그인정보를 구현 한뒤에 이 메소드도 구현할 예정
-            //현재는 임시적으로 로그인 실패했다고 가정함.
-            MessageBox.Show("아이디/비밀번호를 다시 확인해 주세요.");
+            string path = @"D:\HoonGit\Winform\R1_201801757_김정훈\R1_201801757_김정훈\idList\remember.txt";
+            
             //아이디가 틀리면 아이디로 포커스 이동
+
             //비밀번호가 틀렸으면 비밀번호로 포커스 이동
+            if (cbRemember.Checked)
+            {
+                if(tbID.Text != "" || tbID.Text != "아이디")
+                {
+                    //빈 문자열, default 값인 경우 저장하지 않게 함.
+                    StreamWriter sw = new StreamWriter(path);
+                    sw.Write(tbID.Text);
+                    sw.Close();
+                }
+            }
+            else
+            {
+                File.Delete(path);
+            }
             
         }
 
