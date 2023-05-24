@@ -47,6 +47,7 @@
             this.tbID.TabIndex = 2;
             this.tbID.Text = "아이디";
             this.tbID.Click += new System.EventHandler(this.tbID_Click);
+            this.tbID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbID_KeyPress);
             this.tbID.Leave += new System.EventHandler(this.tbID_Leave);
             // 
             // tbPW
@@ -56,6 +57,8 @@
             this.tbPW.Size = new System.Drawing.Size(148, 25);
             this.tbPW.TabIndex = 3;
             this.tbPW.Text = "비밀번호";
+            this.tbPW.Click += new System.EventHandler(this.tbPW_Click);
+            this.tbPW.Leave += new System.EventHandler(this.tbPW_Leave);
             // 
             // btnLogin
             // 
@@ -65,6 +68,7 @@
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // label1
             // 
@@ -75,6 +79,7 @@
             this.label1.Size = new System.Drawing.Size(67, 15);
             this.label1.TabIndex = 5;
             this.label1.Text = "회원가입";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -130,6 +135,7 @@
             this.Controls.Add(this.tbID);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "로그인";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
