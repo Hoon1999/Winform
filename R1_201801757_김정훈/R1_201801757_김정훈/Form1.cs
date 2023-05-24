@@ -24,7 +24,7 @@ namespace R1_201801757_김정훈
 
         private void tbID_Click(object sender, EventArgs e)
         {
-            tbID.Text = "";
+            tbID.Text = ""; ;
         }
 
         private void tbID_Leave(object sender, EventArgs e)
