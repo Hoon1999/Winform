@@ -29,6 +29,8 @@ namespace R1_201801757_김정훈
                 cbRemember.Checked = true;
                 sr.Close();
             }
+            Form5 frm4 = new Form5();
+            frm4.ShowDialog();
         }
 
         private void tbID_Click(object sender, EventArgs e)
