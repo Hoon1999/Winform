@@ -79,7 +79,7 @@ namespace R1_201801757_김정훈
                 MessageBox.Show("오류 : 가입에 실패하였습니다.");
                 return; }
             MessageBox.Show("가입에 성공하였습니다.");
-
+            this.Close();
         }
 
         private void btnCheck_Click(object sender, EventArgs e)
@@ -96,8 +96,15 @@ namespace R1_201801757_김정훈
             {
                 MessageBox.Show("생성가능한 아이디 입니다.");
                 check = true;
+                lblCheck.Text = "아이디 중복검사 완료.";
                 return;
             }
+        }
+
+        private void tbID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            check = false;
+            lblCheck.Text = "아이디 중복검사를 해주세요.";
         }
     }
 }

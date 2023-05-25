@@ -41,6 +41,7 @@
             this.tbID = new System.Windows.Forms.TextBox();
             this.tbPW = new System.Windows.Forms.TextBox();
             this.lblGender = new System.Windows.Forms.Label();
+            this.lblCheck = new System.Windows.Forms.Label();
             this.gbGender.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +57,7 @@
             // lblPW
             // 
             this.lblPW.AutoSize = true;
-            this.lblPW.Location = new System.Drawing.Point(33, 80);
+            this.lblPW.Location = new System.Drawing.Point(33, 101);
             this.lblPW.Name = "lblPW";
             this.lblPW.Size = new System.Drawing.Size(67, 15);
             this.lblPW.TabIndex = 1;
@@ -65,7 +66,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 118);
+            this.label1.Location = new System.Drawing.Point(33, 139);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 15);
             this.label1.TabIndex = 2;
@@ -78,14 +79,14 @@
             "SKT",
             "KT",
             "U+"});
-            this.comboBox1.Location = new System.Drawing.Point(114, 114);
+            this.comboBox1.Location = new System.Drawing.Point(114, 135);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(58, 23);
             this.comboBox1.TabIndex = 3;
             // 
             // maskedTextBox1
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(188, 113);
+            this.maskedTextBox1.Location = new System.Drawing.Point(188, 134);
             this.maskedTextBox1.Mask = "(999)9000-0000";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(121, 25);
@@ -96,7 +97,7 @@
             // 
             this.gbGender.Controls.Add(this.rdbW);
             this.gbGender.Controls.Add(this.rdbM);
-            this.gbGender.Location = new System.Drawing.Point(130, 144);
+            this.gbGender.Location = new System.Drawing.Point(130, 165);
             this.gbGender.Name = "gbGender";
             this.gbGender.Size = new System.Drawing.Size(149, 42);
             this.gbGender.TabIndex = 5;
@@ -126,7 +127,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(130, 217);
+            this.button1.Location = new System.Drawing.Point(130, 227);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(161, 77);
             this.button1.TabIndex = 6;
@@ -150,10 +151,11 @@
             this.tbID.Name = "tbID";
             this.tbID.Size = new System.Drawing.Size(195, 25);
             this.tbID.TabIndex = 8;
+            this.tbID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbID_KeyPress);
             // 
             // tbPW
             // 
-            this.tbPW.Location = new System.Drawing.Point(114, 75);
+            this.tbPW.Location = new System.Drawing.Point(114, 96);
             this.tbPW.Name = "tbPW";
             this.tbPW.PasswordChar = '*';
             this.tbPW.Size = new System.Drawing.Size(195, 25);
@@ -162,17 +164,27 @@
             // lblGender
             // 
             this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(63, 161);
+            this.lblGender.Location = new System.Drawing.Point(63, 182);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(37, 15);
             this.lblGender.TabIndex = 2;
             this.lblGender.Text = "성별";
+            // 
+            // lblCheck
+            // 
+            this.lblCheck.AutoSize = true;
+            this.lblCheck.Location = new System.Drawing.Point(112, 71);
+            this.lblCheck.Name = "lblCheck";
+            this.lblCheck.Size = new System.Drawing.Size(197, 15);
+            this.lblCheck.TabIndex = 10;
+            this.lblCheck.Text = "아이디 중복검사를 해주세요";
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(429, 329);
+            this.Controls.Add(this.lblCheck);
             this.Controls.Add(this.lblGender);
             this.Controls.Add(this.tbPW);
             this.Controls.Add(this.tbID);
@@ -185,6 +197,7 @@
             this.Controls.Add(this.lblPW);
             this.Controls.Add(this.lblID);
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "회원가입";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.gbGender.ResumeLayout(false);
@@ -209,5 +222,6 @@
         private System.Windows.Forms.TextBox tbID;
         private System.Windows.Forms.TextBox tbPW;
         private System.Windows.Forms.Label lblGender;
+        private System.Windows.Forms.Label lblCheck;
     }
 }
