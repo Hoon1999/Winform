@@ -18,6 +18,7 @@ namespace R1_201801757_김정훈
             InitializeComponent();
         }
         bool check = false; // ID 중복검사 여부
+        string path = Application.StartupPath + @"\idList\";
         private void Form2_Load(object sender, EventArgs e)
         {
             this.comboBox1.SelectedIndex = 0;
@@ -59,8 +60,6 @@ namespace R1_201801757_김정훈
                 return;
             }
             //id.txt 생성
-            //path : D:\HoonGit\Winform\R1_201801757_김정훈\R1_201801757_김정훈\idList
-            string path = @"D:\HoonGit\Winform\R1_201801757_김정훈\R1_201801757_김정훈\idList\";
             string id = tbID.Text;
             try
             {
@@ -84,10 +83,8 @@ namespace R1_201801757_김정훈
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
-            //path : D:\HoonGit\Winform\R1_201801757_김정훈\R1_201801757_김정훈\idList
             string id = tbID.Text;
-            string path = @"D:\HoonGit\Winform\R1_201801757_김정훈\R1_201801757_김정훈\idList\"+id+".txt";
-            if (File.Exists(path))
+            if (File.Exists(path + id + ".txt"))
             {
                 MessageBox.Show("중복된 아이디 입니다.");
                 return;

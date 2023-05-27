@@ -17,7 +17,7 @@ namespace R1_201801757_김정훈
         {
             InitializeComponent();
         }
-
+        string path = Application.StartupPath + @"\idList\";
         private void Form5_Load(object sender, EventArgs e)
         {
             comboBox1.SelectedIndex = 0;
@@ -31,8 +31,6 @@ namespace R1_201801757_김정훈
 
         private void btnIDSearch_Click(object sender, EventArgs e)
         {
-            //path=D:\HoonGit\Winform\R1_201801757_김정훈\R1_201801757_김정훈\idList\
-            string path = @"D:\HoonGit\Winform\R1_201801757_김정훈\R1_201801757_김정훈\idList\";
             if(tbID.Text != "")
             {
                 if(File.Exists(path + tbID.Text + ".txt"))

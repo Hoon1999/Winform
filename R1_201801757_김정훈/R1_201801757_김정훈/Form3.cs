@@ -27,6 +27,8 @@ namespace R1_201801757_김정훈
             rootNode.Nodes.Add(myNode);
             myNode.Nodes.Add(myInfoNode);
             myNode.Nodes.Add(myInfoEditNode);
+
+            treeView1.Nodes.Add(rootNode);
         }
     }
 }

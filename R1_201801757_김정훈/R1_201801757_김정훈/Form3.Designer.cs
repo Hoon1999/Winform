@@ -39,14 +39,14 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(21, 25);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(106, 397);
+            this.treeView1.Size = new System.Drawing.Size(167, 397);
             this.treeView1.TabIndex = 0;
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(129, 25);
+            this.tabControl1.Location = new System.Drawing.Point(257, 25);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(611, 397);
@@ -76,7 +76,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 450);
+            this.ClientSize = new System.Drawing.Size(953, 450);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.treeView1);
             this.Name = "Form3";

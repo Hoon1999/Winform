@@ -17,20 +17,21 @@ namespace R1_201801757_김정훈
         {
             InitializeComponent();
         }
-
+        string path = Application.StartupPath + @"\idList\";
         private void Form1_Load(object sender, EventArgs e)
         {
-            string path = @"D:\HoonGit\Winform\R1_201801757_김정훈\R1_201801757_김정훈\idList\remember.txt";
-            if (File.Exists(path))
+            ;
+            if (File.Exists(path+ "remember.txt"))
             {
-                StreamReader sr = new StreamReader(path);
+                StreamReader sr = new StreamReader(path+ "remember.txt");
                 string ID = sr.ReadLine();
                 tbID.Text = ID;
                 cbRemember.Checked = true;
                 sr.Close();
             }
-            Form5 frm4 = new Form5();
-            frm4.ShowDialog();
+            //Form3 frm3 = new Form3();
+            //frm3.ShowDialog();
+            //this.Close();
         }
 
         private void tbID_Click(object sender, EventArgs e)
@@ -47,7 +48,6 @@ namespace R1_201801757_김정훈
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string path = @"D:\HoonGit\Winform\R1_201801757_김정훈\R1_201801757_김정훈\idList\";
             if (cbRemember.Checked)
             {
                 if(tbID.Text != "" || tbID.Text != "아이디")
@@ -64,6 +64,7 @@ namespace R1_201801757_김정훈
             }
             if (!File.Exists(path + tbID.Text + ".txt"))
             {
+                MessageBox.Show(path + "remember.txt");
                 MessageBox.Show("아이디가 존재하지 않습니다.");
                 tbID.Focus();
                 return;
@@ -76,12 +77,11 @@ namespace R1_201801757_김정훈
                     sr.Close();
                     //비밀번호 일치함.
                     // form 3 으로 넘어감. 넘어갈 때 로그인정보 : id 넘겨줘야 함.
+                    this.Visible = false; // Form3 을 사용할 때 Form1을 보이지 않게한다.
                     Form3 frm3 = new Form3();
                     frm3.Text = tbID.Text;
                     frm3.ShowDialog();
-                    // 그리고 form1은 종료해도 되나?
-                    //this.Close(); 안되네;
-                    // frm3 이 form1 내부에 선언되어 있으니까 form1을 끄면 frm3도 같이 삭제되네
+                    this.Close(); // form3 종료시 form1도 같이 종료됨.
                 }
                 else
                 {
