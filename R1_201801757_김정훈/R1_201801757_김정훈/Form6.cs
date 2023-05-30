@@ -17,9 +17,8 @@ namespace R1_201801757_김정훈
         {
             InitializeComponent();
         }
-        public delegate void Sen(); //sender
+        public delegate void Sen(string tmp); //sender
         public event Sen Cm; // close message
-        int i;
         private void Form6_Load(object sender, EventArgs e)
         {
             lblID.Text = this.Text;
@@ -41,7 +40,7 @@ namespace R1_201801757_김정훈
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-            Cm();
+            Cm("Information");
         }
     }
 }

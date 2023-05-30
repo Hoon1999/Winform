@@ -14,3 +14,4 @@ D:\HoonGit\Winform\R1_201801757_김정훈\R1_201801757_김정훈\obj\Debug\R1_20
 D:\HoonGit\Winform\R1_201801757_김정훈\R1_201801757_김정훈\obj\Debug\R1_201801757_김정훈.Form4.resources
 D:\HoonGit\Winform\R1_201801757_김정훈\R1_201801757_김정훈\obj\Debug\R1_201801757_김정훈.Form5.resources
 D:\HoonGit\Winform\R1_201801757_김정훈\R1_201801757_김정훈\obj\Debug\R1_201801757_김정훈.Form6.resources
+D:\HoonGit\Winform\R1_201801757_김정훈\R1_201801757_김정훈\obj\Debug\R1_201801757_김정훈.Form7.resources

@@ -17,7 +17,7 @@ namespace R1_201801757_김정훈
             InitializeComponent();
         }
         int myInfoIndex = -1;
-        int myInfoExitIndex = -1;
+        int myInfoEditIndex = -1;
         int storageIndex = -1;
         private void Form3_Load(object sender, EventArgs e)
         {
@@ -33,9 +33,6 @@ namespace R1_201801757_김정훈
             rootNode.Nodes.Add(storage);
 
             treeView1.Nodes.Add(rootNode);
-
-            tabControl1.TabPages.Remove(tabPage1);
-            tabControl1.TabPages.Remove(tabPage2);
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -47,7 +44,7 @@ namespace R1_201801757_김정훈
                 {
                     return; // 내 정보 탭이 이미 존재하면 아무일도 일어나지 않는다.
                 }
-                tabControl1.TabPages.Add("information", "내 정보"); // key : Information
+                tabControl1.TabPages.Add("Information", "내 정보"); // key : Information
                 myInfoIndex = tabControl1.TabPages.IndexOfKey("Information"); // key 와 대응되는 index 반환
                 
                 Form6 frm6 = new Form6();
@@ -61,9 +58,19 @@ namespace R1_201801757_김정훈
             }
             else if (e.Node.Text == "내 정보 수정")
             {
-                if (myInfoExitIndex != -1)
+                if (myInfoEditIndex != -1)
                     return;
-                
+                tabControl1.TabPages.Add("InformationEdit", "내 정보 수정");
+                myInfoEditIndex = tabControl1.TabPages.IndexOfKey("InformationEdit");
+
+                Form7 frm7 = new Form7();
+                frm7.TopLevel = false;
+                tabControl1.TabPages[myInfoEditIndex].Controls.Add(frm7);
+                frm7.WindowState = FormWindowState.Maximized;
+                frm7.Text = this.Text;
+                frm7.Show();
+
+                frm7.Cm += new Form7.Sen(der);
             }
             else if (e.Node.Text == "저장공간")
             {
@@ -72,11 +79,22 @@ namespace R1_201801757_김정훈
                 
             }
         }
-        private void der()
+        private void der(string tmp)
         {
-            //form 6 창 닫기 버튼을 받으면 호출된다.
-            tabControl1.TabPages.Remove(tabControl1.TabPages[myInfoIndex]);
-            myInfoIndex = -1; // -1 은 tab이 없다는 것을 의미함.
+            //창 닫기 버튼을 받으면 호출된다.
+            myInfoIndex = tabControl1.TabPages.IndexOfKey("Information");
+            myInfoEditIndex = tabControl1.TabPages.IndexOfKey("InformationEdit");
+            //storageIndex =
+            if (tmp == "Information")
+            {
+                tabControl1.TabPages.Remove(tabControl1.TabPages[myInfoIndex]);
+                myInfoIndex = -1; // -1 은 tab이 없다는 것을 의미함.
+            }
+            else if (tmp == "InformationEdit")
+            {
+                tabControl1.TabPages.Remove(tabControl1.TabPages[myInfoEditIndex]);
+                myInfoEditIndex = -1;
+            }
         }
     }
 }
