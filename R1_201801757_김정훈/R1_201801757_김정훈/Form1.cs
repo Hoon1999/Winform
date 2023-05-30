@@ -99,15 +99,6 @@ namespace R1_201801757_김정훈
                 btnLogin_Click(sender, e);
         }
 
-        private void tbPW_Click(object sender, EventArgs e)
-        {
-            if(tbPW.Text == "비밀번호")
-            {
-                tbPW.Text = "";
-                tbPW.PasswordChar = '*';
-            }
-        }
-
         private void tbPW_Leave(object sender, EventArgs e)
         {
             if (tbPW.Text == "")
@@ -134,6 +125,15 @@ namespace R1_201801757_김정훈
         {
             Form5 frm5 = new Form5();
             frm5.ShowDialog();
+        }
+
+        private void tbPW_Enter(object sender, EventArgs e)
+        {
+            if (tbPW.Text == "비밀번호")
+            {
+                tbPW.Text = "";
+                tbPW.PasswordChar = '*';
+            }
         }
     }
 }

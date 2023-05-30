@@ -58,7 +58,7 @@
             this.tbPW.Size = new System.Drawing.Size(148, 25);
             this.tbPW.TabIndex = 3;
             this.tbPW.Text = "비밀번호";
-            this.tbPW.Click += new System.EventHandler(this.tbPW_Click);
+            this.tbPW.Enter += new System.EventHandler(this.tbPW_Enter);
             this.tbPW.Leave += new System.EventHandler(this.tbPW_Leave);
             // 
             // btnLogin
