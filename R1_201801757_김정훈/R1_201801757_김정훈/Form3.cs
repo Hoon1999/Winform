@@ -86,7 +86,7 @@ namespace R1_201801757_김정훈
                 frm8.Text = this.Text;
                 frm8.Show();
 
-                //frm8.Cm += new Form7.Sen(der);
+                frm8.Cm += new Form8.Sen(der);
             }
         }
         private void der(string tmp)
@@ -94,7 +94,7 @@ namespace R1_201801757_김정훈
             //창 닫기 버튼을 받으면 호출된다.
             myInfoIndex = tabControl1.TabPages.IndexOfKey("Information");
             myInfoEditIndex = tabControl1.TabPages.IndexOfKey("InformationEdit");
-            //storageIndex =
+            storageIndex = tabControl1.TabPages.IndexOfKey("Storage");
             if (tmp == "Information")
             {
                 tabControl1.TabPages.Remove(tabControl1.TabPages[myInfoIndex]);
@@ -104,6 +104,11 @@ namespace R1_201801757_김정훈
             {
                 tabControl1.TabPages.Remove(tabControl1.TabPages[myInfoEditIndex]);
                 myInfoEditIndex = -1;
+            }
+            else if(tmp == "Storage")
+            {
+                tabControl1.TabPages.Remove(tabControl1.TabPages[storageIndex]);
+                storageIndex = -1;
             }
         }
     }
