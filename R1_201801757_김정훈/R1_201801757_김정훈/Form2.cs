@@ -23,12 +23,10 @@ namespace R1_201801757_김정훈
         {
             this.comboBox1.SelectedIndex = 0;
         }
-
         private void maskedTextBox1_Click(object sender, EventArgs e)
         {
             maskedTextBox1.SelectionStart = 0;
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             //아이디 중복검사

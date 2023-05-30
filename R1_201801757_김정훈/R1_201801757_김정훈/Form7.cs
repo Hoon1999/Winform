@@ -57,6 +57,7 @@ namespace R1_201801757_김정훈
                 sw.WriteLine(rdbW.Text);
             }
             sw.Close();
+            MessageBox.Show("변경이 완료되었습니다.");
         }
 
         private void maskedTextBox1_Enter(object sender, EventArgs e)

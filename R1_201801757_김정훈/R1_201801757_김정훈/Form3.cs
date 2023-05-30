@@ -76,7 +76,17 @@ namespace R1_201801757_김정훈
             {
                 if (storageIndex != -1)
                     return;
-                
+                tabControl1.TabPages.Add("Storage", "저장공간");
+                storageIndex = tabControl1.TabPages.IndexOfKey("Storage");
+
+                Form8 frm8 = new Form8();
+                frm8.TopLevel = false;
+                tabControl1.TabPages[storageIndex].Controls.Add(frm8);
+                frm8.WindowState = FormWindowState.Maximized;
+                frm8.Text = this.Text;
+                frm8.Show();
+
+                //frm8.Cm += new Form7.Sen(der);
             }
         }
         private void der(string tmp)
